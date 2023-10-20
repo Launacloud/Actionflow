@@ -3,7 +3,6 @@ on:
     url:
       - https://www.reddit.com/r/FreeEBOOKS/
       - https://www.reddit.com/r/freebooks/
-
 jobs:
   telegram:
     name: Send a telegram message
