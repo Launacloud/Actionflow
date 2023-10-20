@@ -3,7 +3,7 @@ on:
     url: https://www.reddit.com/r/FreeEBOOKS+freebooks
 jobs:
   telegram:
-    name: Send a telegram message
+    name: Send a telegram message2
     runs-on: ubuntu-latest
     steps:
       - name: Send a telegram message
@@ -12,6 +12,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message:  |
-          title: ${{on.reddit.outputs.title}}
-          content: ${{on.reddit.outputs.content}}
-          link: ${{on.reddit.outputs.link}
+          ${{on.reddit.outputs.title}}
+          ${{on.reddit.outputs.content}}
+          ${{on.reddit.outputs.link}
+          ${{on.reddit.outputs.pubDate}}
