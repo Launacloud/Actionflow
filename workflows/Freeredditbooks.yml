@@ -8,6 +8,7 @@ jobs:
     name: Send a telegram message
     runs-on: ubuntu-latest
     steps:
+      - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
@@ -15,8 +16,4 @@ jobs:
           message:  |
           title: ${{on.reddit.outputs.title}}
           content: ${{on.reddit.outputs.content}}
-          link: ${{on.reddit.outputs.link}}
-        run: |
-          echo title: $title
-          echo contentSnippet: $content
-          echo link: $link
+          link: ${{on.reddit.outputs.link}
