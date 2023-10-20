@@ -1,8 +1,6 @@
 on:
   reddit:
-    url:
-      https://www.reddit.com/r/FreeEBOOKS/
-      https://www.reddit.com/r/freebooks/
+    url: https://www.reddit.com/r/FreeEBOOKS+freebooks
 jobs:
   telegram:
     name: Send a telegram message
