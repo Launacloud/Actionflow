@@ -1,17 +1,19 @@
 on:
   rss:
-    url: https://hnrss.org/newest?points=300&count=3
+    url: https://politepol.com/fd/ocELqRJFPc4X
 jobs:
-  print:
-    name: Print
+  telegram:
+    name: Send a telegram message
     runs-on: ubuntu-latest
     steps:
-      - name: Print Outputs
-        env:
-          title: ${{on.rss.outputs.title}}
-          contentSnippet: ${{on.rss.outputs.contentSnippet}}
-          link: ${{on.rss.outputs.link}}
-        run: |
-          echo title: $title
-          echo contentSnippet: $contentSnippet
-          echo link: $link
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message:  |
+            XySubFilter  pinterf VER. updated
+            ${{on.rss.outputs.title}}
+            ${{on.rss.outputs.contentSnippet}}
+            Time: ${{on.rss.outputs.pubDate}}
+            ${{on.rss.outputs.link}}
