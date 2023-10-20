@@ -14,5 +14,3 @@ jobs:
           message:  |
             ${{on.reddit.outputs.title}}
             ${{on.reddit.outputs.content}}
-            ${{on.reddit.outputs.pubDate}}
-            ${{on.reddit.outputs.link}}
