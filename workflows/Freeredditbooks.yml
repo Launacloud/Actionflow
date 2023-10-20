@@ -15,4 +15,3 @@ jobs:
           ${{on.reddit.outputs.title}}
           ${{on.reddit.outputs.content}}
           ${{on.reddit.outputs.link}}
-          ${{on.reddit.outputs.pubDate}}
