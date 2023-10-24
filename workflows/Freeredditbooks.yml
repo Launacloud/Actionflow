@@ -39,5 +39,5 @@ env:
           echo sub: $sub
           echo url: $url
           echo link: $link
-<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
-<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
+          <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+          <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
