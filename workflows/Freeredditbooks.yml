@@ -28,13 +28,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Outputs
-        env:
+env:
           title: ${{on.reddit.outputs.title}}
-          sub: https://www.reddit.com/user/${{on.reddit.outputs.subreddit_name_prefixed }}
+          sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed }}
+          author: https://www.reddit.com/user/${{on.reddit.outputs.author }}
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
           link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
           echo title: $title
-          echo link: $sub
-          echo link: $url
+          echo sub: $sub
+          echo url: $url
           echo link: $link
+<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
