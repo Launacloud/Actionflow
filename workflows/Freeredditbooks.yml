@@ -17,9 +17,8 @@
          #   ${{on.reddit.outputs.content}
 on:
   reddit:
-    url: https://www.reddit.com/r/news/
-    source:json
-jobs:
+    url: https://www.reddit.com/r/news/.json 
+  jobs:
   print:
     name: Print
     runs-on: ubuntu-latest
