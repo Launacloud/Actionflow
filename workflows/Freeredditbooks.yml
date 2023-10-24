@@ -17,7 +17,8 @@
          #   ${{on.reddit.outputs.content}
 on:
   reddit:
-    url: https://www.reddit.com/r/news/.JSON
+    url: https://www.reddit.com/r/news/
+    source:json
 jobs:
   print:
     name: Print
