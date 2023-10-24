@@ -30,9 +30,9 @@ jobs:
       - name: Print Outputs
         env:
           title: ${{on.reddit.outputs.title}}
-          sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
+          sub: https://www.reddit.com/user/${{on.reddit.outputs.subreddit_name_prefixed }}
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          link: ${{on.reddit.outputs.permalink}}
+          link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
           echo title: $title
           echo link: $sub
