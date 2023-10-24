@@ -18,8 +18,10 @@
 on:
   reddit:
     url: https://www.reddit.com/r/news/
-    config:
-      limit: 15
+    source: json
+    #config:
+      #limit: 15
+      #source: json
 jobs:
   print:
     name: Print
