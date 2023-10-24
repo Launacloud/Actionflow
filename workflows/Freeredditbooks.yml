@@ -28,14 +28,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Outputs
-env:
+       env:
           title: ${{on.reddit.outputs.title}}
           sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed }}
           author: https://www.reddit.com/user/${{on.reddit.outputs.author }}
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
           link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
-          echo title: $title
+        echo title: $title
           echo sub: $sub
           echo url: $url
           echo link: $link
