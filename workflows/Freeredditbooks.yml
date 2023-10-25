@@ -25,12 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Outputs
-        env:
-          title: ${{on.reddit.outputs.title}}
-          subr: $https://www.reddit.com{{on.reddit.outputs.subreddit_name_prefixed}}
-          author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
-          url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          link: https://www.reddit.com${{on.reddit.outputs.permalink}}
+        #env:
+          #title: ${{on.reddit.outputs.title}}
+          #subr: $https://www.reddit.com{{on.reddit.outputs.subreddit_name_prefixed}}
+          #author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
+          #url: ${{on.reddit.outputs.url_overridden_by_dest}}
+          #link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
           echo title: $title
           echo subr: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed}}
