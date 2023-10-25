@@ -33,8 +33,8 @@ jobs:
           link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
         echo title: $title
-          echo sub: $sub
+          echo sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed }}
           echo url: $url
-          echo link: $link
+          echo link: https://www.reddit.com${{on.reddit.outputs.permalink}}
           <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
           <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
