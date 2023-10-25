@@ -25,16 +25,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Outputs
-        #env:
-          #title: ${{on.reddit.outputs.title}}
-          #subr: $https://www.reddit.com{{on.reddit.outputs.subreddit_name_prefixed}}
-          #author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
-          #url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          #link: https://www.reddit.com${{on.reddit.outputs.permalink}}
+        env:
+          title: $<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+          subr: $<a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
+          author: $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
+          url: $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+          #plink: 
         run: |
-          #echo title: $title
-          #echo subr: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed}}
-          #echo url: $url
-          #echo link: https://www.reddit.com${{on.reddit.outputs.permalink}}
-          <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
-          <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
+          echo title: $title
+          echo url: $url
+          echo subr: $subr
+          echo author: $author
+          #echo plink: 
+          
+          #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+          #<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a> <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">at {{on.reddit.outputs.subreddit_name_prefixed}}</a>
