@@ -1,6 +1,7 @@
 #on:
-  #reddit:
+  #reddit
     #url: https://www.reddit.com/r/FreeEBOOKS+freebooks
+    #source: json
 #jobs:
   #telegram:
     #name: Send a telegram message2
@@ -13,8 +14,10 @@
       #    token: ${{ secrets.TELEGRAM_TOKEN }}
       #    format: html
       #    message:  |
-       #     ${{on.reddit.outputs.title}}
-         #   ${{on.reddit.outputs.content}
+       #     <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+         #   <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
+         #   $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
+         #   $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
 on:
   reddit:
     url: https://www.reddit.com/r/news/
@@ -36,7 +39,10 @@ jobs:
           echo url: $url
           echo subr: $subr
           echo author: $author
-          #echo plink: 
+            <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
+            <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
+            $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
+            $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>          
           
           #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
           #<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a> <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">at {{on.reddit.outputs.subreddit_name_prefixed}}</a>
