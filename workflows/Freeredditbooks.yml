@@ -19,16 +19,13 @@ on:
   reddit:
     url: https://www.reddit.com/r/news/
     source: json
-    #config:
-      #limit: 15
-      #source: json
 jobs:
   print:
     name: Print
     runs-on: ubuntu-latest
     steps:
       - name: Print Outputs
-       env:
+        env:
           title: ${{on.reddit.outputs.title}}
           sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed }}
           author: https://www.reddit.com/user/${{on.reddit.outputs.author }}
