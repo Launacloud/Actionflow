@@ -22,9 +22,9 @@ jobs:
           message:  |
           #format: HTML
           echo: <b><a href="https://www.reddit.com$plink">$title</a></b>
-          echo: <a href="$url">Book Link</a>
-          echo: <a href="https://www.reddit.com/$subr">$subr</a>
-          echo: <a href="$author">$author</a>
+          echo 1: <a href="$url">Book Link</a>
+          echo 2: <a href="https://www.reddit.com/$subr">$subr</a>
+          echo 3: <a href="$author">$author</a>
          
           #message:  |
             #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
