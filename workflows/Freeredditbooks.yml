@@ -4,7 +4,7 @@ on:
     source: json
 jobs:
   telegram:
-    name: Send a telegram message2
+    name: Send a telegram message
     runs-on: ubuntu-latest
     steps:
       - name: Send a telegram message
@@ -12,7 +12,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: html
+          format: HTML
           message:  |
             <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
             <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
