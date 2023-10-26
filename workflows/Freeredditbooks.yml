@@ -14,10 +14,10 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: HTML
           message:  |
-            <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
-            <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
-            <a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by ${{on.reddit.outputs.author }}</a>
-            <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+            echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
+            echo <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
+            echo <a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by ${{on.reddit.outputs.author }}</a>
+            echo <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
 #on:
   #reddit:
     #url: https://www.reddit.com/r/news/
