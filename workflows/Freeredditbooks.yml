@@ -31,15 +31,16 @@ jobs:
       - name: Print Outputs
         env:
           title: ${{on.reddit.outputs.title}}
-          sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed}}
-          author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
+          sub: ${{on.reddit.outputs.subreddit_name_prefixed}}
+          author: $https://www.reddit.com/user/${{on.reddit.outputs.author}}
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          link: https://www.reddit.com${{on.reddit.outputs.permalink}}
+          plink: $https://www.reddit.com${{on.reddit.outputs.permalink}}
+          author: ${{on.reddit.outputs.author }}
         run: |
           echo title: $title
-          echo sub: $sub
+          echo sub: https://www.reddit.com/$sub
           echo url: $url
-          echo link: $link
+          echo plink: https://www.reddit.com/$link
 
         #env:
           #title: ${{on.reddit.outputs.title}}
