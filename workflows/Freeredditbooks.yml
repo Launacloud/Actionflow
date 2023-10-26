@@ -21,8 +21,7 @@
 on:
   reddit:
     url: https://www.reddit.com/r/news/
-    config:
-      source: json
+    source: json
 jobs:
   print:
     name: Print
