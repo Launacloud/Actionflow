@@ -13,14 +13,17 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: HTML
+          env:
+           title: ${{on.reddit.outputs.title}}
+           subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
+           url: ${{on.reddit.outputs.url_overridden_by_dest}}
+           plink: ${{on.reddit.outputs.permalink}}
+           author: ${{on.reddit.outputs.author }}
           message:  |
-            ${{on.reddit.outputs.title}}
-            https://www.reddit.com${{on.reddit.outputs.permalink}}
-            by ${{on.reddit.outputs.subreddit_name_prefixed}}
-            ${{on.rss.outputs.contentSnippet}}
-            ${{on.reddit.outputs.author }}
-            ${{on.reddit.outputs.url_overridden_by_dest}}
-
+          echo title: <b><a href="https://www.reddit.com$plink">$title</a></b>
+          echo url: <a href="$url">Book Link</a>
+          echo subr: <a href="https://www.reddit.com/$subr">$subr</a>
+          echo author: <a href="$author">$author</a>
          
           #message:  |
             #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
