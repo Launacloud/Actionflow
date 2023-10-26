@@ -1,39 +1,39 @@
-#on:
-  #reddit:
-    #url: https://www.reddit.com/r/FreeEBOOKS+freebooks
-    #source: json
-#jobs:
-  #telegram:
-    #name: Send a telegram message2
-    #runs-on: ubuntu-latest
-    #steps:
-      #- name: Send a telegram message
-      #  uses: appleboy/telegram-action@master
-      #  with:
-      #    to: ${{ secrets.TELEGRAM_TO }}
-      #    token: ${{ secrets.TELEGRAM_TOKEN }}
-      #    format: html
-      #    message:  |
-       #     <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
-         #   <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
-         #   $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
-         #   $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
 on:
   reddit:
-    url: https://www.reddit.com/r/news/
+    url: https://www.reddit.com/r/FreeEBOOKS+freebooks
     source: json
 jobs:
-  print:
-    name: Print
+  telegram:
+    name: Send a telegram message2
     runs-on: ubuntu-latest
     steps:
-      - name: Print Outputs
-        env:
-          title: ${{on.reddit.outputs.title}}
-          subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
-          url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          plink: ${{on.reddit.outputs.permalink}}
-          author: ${{on.reddit.outputs.author }}
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: html
+          message:  |
+            <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
+            <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
+            $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by ${{on.reddit.outputs.author }}</a>
+            $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+#on:
+  #reddit:
+    #url: https://www.reddit.com/r/news/
+    #source: json
+#jobs:
+  #print:
+    #name: Print
+    #runs-on: ubuntu-latest
+    #steps:
+      #- name: Print Outputs
+        #env:
+          #title: ${{on.reddit.outputs.title}}
+          #subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
+          #url: ${{on.reddit.outputs.url_overridden_by_dest}}
+          #plink: ${{on.reddit.outputs.permalink}}
+          #author: ${{on.reddit.outputs.author }}
         run: |
           echo title: $title
           echo sub: https://www.reddit.com/$subr
@@ -41,17 +41,6 @@ jobs:
           echo plink: https://www.reddit.com/$plink
           echo author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
 
-        #env:
-          #title: ${{on.reddit.outputs.title}}
-          #subr: ${on.reddit.outputs.subreddit_name_prefixed}}
-          #author: ${{on.reddit.outputs.author }}
-          #url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          #plink: ${{on.reddit.outputs.permalink}}
-        #run: |
-          #echo title: $plink $title
-          #echo url: <a href="$url">Book Link</a>
-          #echo subr: $subr
-          #echo author: <a href="https://www.reddit.com/user/$author">$author</a>
             #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
             #<a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
             #$<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
