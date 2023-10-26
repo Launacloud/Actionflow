@@ -13,13 +13,13 @@ jobs:
           to: ${{secrets.TELEGRAM_TO}}
           token: ${{secrets.TELEGRAM_TOKEN}}
           format: HTML
-          env:
+          env: 
             title: ${{on.reddit.outputs.title}}
             subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
             url: ${{on.reddit.outputs.url_overridden_by_dest}}
             plink: ${{on.reddit.outputs.permalink}}
             author: ${{on.reddit.outputs.author }}
-          message: ""
+          message:  |
           echo: <b><a href="https://www.reddit.com$plink">$title</a></b> <a href="$url">
             Book Link</a> <a href="https://www.reddit.com/$subr"> $subr</a><a
             href="$author"> $author</a>
