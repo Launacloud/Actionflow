@@ -29,20 +29,21 @@ jobs:
     steps:
       - name: Print Outputs
         env:
-          title: $<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
-          subr: $<a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
-          author: $<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
-          url: $<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+          title: ${{on.reddit.outputs.title}}
+          subr: ${on.reddit.outputs.subreddit_name_prefixed}}
+          author: ${{on.reddit.outputs.author }}
+          url: ${{on.reddit.outputs.url_overridden_by_dest}}
           #plink: ${{on.reddit.outputs.permalink}}
         run: |
-          echo title: <b><a href="https://www.reddit.com$plink">$title</a></b>$title
+          echo title: <b><a href="https://www.reddit.com$plink">$title</a></b>
           echo url: <a href="$url">Book Link</a>
           echo subr: $subr
-          echo author: <a href="$author">Book Link</a>
+          echo author: <a href="https://www.reddit.com/user/$author">$author</a>
             #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
             #<a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
             #$<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
-            #-$<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>          
+            #-$<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>    
+            #$<a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a>
           
           #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
           #<a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a><a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by {{on.reddit.outputs.author }}</a> <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">at {{on.reddit.outputs.subreddit_name_prefixed}}</a>
