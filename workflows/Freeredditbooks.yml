@@ -21,10 +21,10 @@ jobs:
            author: ${{on.reddit.outputs.author }}
           message:  |
           #format: HTML
-          echo title: <b><a href="https://www.reddit.com$plink">$title</a></b>
-          echo url: <a href="$url">Book Link</a>
-          echo subr: <a href="https://www.reddit.com/$subr">$subr</a>
-          echo author: <a href="$author">$author</a>
+          echo: <b><a href="https://www.reddit.com$plink">$title</a></b>
+          echo: <a href="$url">Book Link</a>
+          echo: <a href="https://www.reddit.com/$subr">$subr</a>
+          echo: <a href="$author">$author</a>
          
           #message:  |
             #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
