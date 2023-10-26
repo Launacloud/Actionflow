@@ -20,11 +20,7 @@ jobs:
            plink: ${{on.reddit.outputs.permalink}}
            author: ${{on.reddit.outputs.author }}
           message:  |
-          #format: HTML
-          echo: <b><a href="https://www.reddit.com$plink">$title</a></b>
-          echo 1: <a href="$url">Book Link</a>
-          echo 2: <a href="https://www.reddit.com/$subr">$subr</a>
-          echo 3: <a href="$author">$author</a>
+          echo: <b><a href="https://www.reddit.com$plink">$title</a></b> <a href="$url"> Book Link</a> <a href="https://www.reddit.com/$subr"> $subr</a><a href="$author"> $author</a>
          
           #message:  |
             #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
