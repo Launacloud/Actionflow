@@ -16,6 +16,6 @@ jobs:
           message:  |
             <b>${{on.reddit.outputs.title}}<b>
             sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
-            url: ${{on.reddit.outputs.url_overridden_by_dest}}
+            <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
             plink: ${{on.reddit.outputs.permalink}}
             author: ${{on.reddit.outputs.author }}
