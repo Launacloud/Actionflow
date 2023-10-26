@@ -43,12 +43,12 @@ jobs:
           #url: ${{on.reddit.outputs.url_overridden_by_dest}}
           #plink: ${{on.reddit.outputs.permalink}}
           #author: ${{on.reddit.outputs.author }}
-        run: |
-          echo title: $title
-          echo sub: https://www.reddit.com/$subr
-          echo url: $url
-          echo plink: https://www.reddit.com/$plink
-          echo author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
+        #run: |
+          #echo title: $title
+          #echo sub: https://www.reddit.com/$subr
+         # echo url: $url
+          #echo plink: https://www.reddit.com/$plink
+          #echo author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
 
             #<b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">{{on.reddit.outputs.title}}</a></b>
             #<a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by {{on.reddit.outputs.subreddit_name_prefixed}}</a>
