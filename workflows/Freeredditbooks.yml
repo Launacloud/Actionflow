@@ -36,7 +36,7 @@ jobs:
           author: ${{on.reddit.outputs.author }}
         run: |
           echo title: $title
-          echo sub: https://www.reddit.com/$Sub
+          echo sub: https://www.reddit.com/$subr
           echo url: $url
           echo plink: https://www.reddit.com/$plink
           echo author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
