@@ -37,9 +37,9 @@ jobs:
           author: ${{on.reddit.outputs.author }}
         run: |
           echo title: $title
-          echo sub: https://www.reddit.com/$sub
-          echo url: $url
-          echo plink: https://www.reddit.com/$link
+          echo sub: https://www.reddit.com/{{on.reddit.outputs.subreddit_name_prefixed }}
+          echo url: {{on.reddit.outputs.url_overridden_by_dest }}
+          echo plink: https://www.reddit.com/$plink
           echo author: https://www.reddit.com${{on.reddit.outputs.author}}
 
         #env:
