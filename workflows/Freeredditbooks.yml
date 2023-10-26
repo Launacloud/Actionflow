@@ -14,10 +14,19 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: HTML
           message:  |
-            echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
-            echo <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
-            echo <a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by ${{on.reddit.outputs.author }}</a>
-            echo <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+            ${{on.reddit.outputs.title}}
+            https://www.reddit.com${{on.reddit.outputs.permalink}}
+            by ${{on.reddit.outputs.subreddit_name_prefixed}}
+            ${{on.rss.outputs.contentSnippet}}
+            ${{on.reddit.outputs.author }}
+            ${{on.reddit.outputs.url_overridden_by_dest}}
+
+          
+          #message:  |
+            #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
+            #echo <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
+            #echo <a href="https://www.reddit.com/user/${{on.reddit.outputs.author}}">by ${{on.reddit.outputs.author }}</a>
+            #echo <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
 #on:
   #reddit:
     #url: https://www.reddit.com/r/news/
