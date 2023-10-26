@@ -21,7 +21,7 @@
 on:
   reddit:
     url: https://www.reddit.com/r/news/
-    #source: json
+    source: json
 jobs:
   print:
     name: Print
