@@ -1,5 +1,5 @@
 #on:
-  #reddit
+  #reddit:
     #url: https://www.reddit.com/r/FreeEBOOKS+freebooks
     #source: json
 #jobs:
@@ -21,7 +21,8 @@
 on:
   reddit:
     url: https://www.reddit.com/r/news/
-    source: json
+    config:
+      source: json
 jobs:
   print:
     name: Print
@@ -30,12 +31,24 @@ jobs:
       - name: Print Outputs
         env:
           title: ${{on.reddit.outputs.title}}
-          subr: ${on.reddit.outputs.subreddit_name_prefixed}}
-          author: ${{on.reddit.outputs.author }}
+          sub: https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed}}
+          author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
-          plink: ${{on.reddit.outputs.permalink}}
+          link: https://www.reddit.com${{on.reddit.outputs.permalink}}
         run: |
-          echo title: $plink $title
+          echo title: $title
+          echo sub: $sub
+          echo url: $url
+          echo link: $link
+
+        #env:
+          #title: ${{on.reddit.outputs.title}}
+          #subr: ${on.reddit.outputs.subreddit_name_prefixed}}
+          #author: ${{on.reddit.outputs.author }}
+          #url: ${{on.reddit.outputs.url_overridden_by_dest}}
+          #plink: ${{on.reddit.outputs.permalink}}
+        #run: |
+          #echo title: $plink $title
           #echo url: <a href="$url">Book Link</a>
           #echo subr: $subr
           #echo author: <a href="https://www.reddit.com/user/$author">$author</a>
