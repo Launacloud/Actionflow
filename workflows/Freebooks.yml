@@ -14,8 +14,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: HTML
           message:  |
-            <b>${{on.reddit.outputs.title}}<b>
-            sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
-            <a href="{{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
-            plink: ${{on.reddit.outputs.permalink}}
-            author: ${{on.reddit.outputs.author }}
+            <b><a href="${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a><b>
+            <a href="${{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
+            Via <a href="https://www.reddit.com${{on.reddit.outputs.subreddit_name_prefixed }}">${{on.reddit.outputs.subreddit_name_prefixed }}</a> By ${{on.reddit.outputs.author }}
