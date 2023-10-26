@@ -12,7 +12,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          #format: HTML
+          format: HTML
           message:  |
             ${{on.reddit.outputs.title}}
             https://www.reddit.com${{on.reddit.outputs.permalink}}
@@ -21,7 +21,7 @@ jobs:
             ${{on.reddit.outputs.author }}
             ${{on.reddit.outputs.url_overridden_by_dest}}
 
-          
+         
           #message:  |
             #echo <b><a href="https://www.reddit.com${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.title}}</a></b>
             #echo <a href="https://www.reddit.com/${on.reddit.outputs.subreddit_name_prefixed}}">by ${{on.reddit.outputs.subreddit_name_prefixed}}</a>
