@@ -35,7 +35,7 @@ jobs:
           url: ${{on.reddit.outputs.url_overridden_by_dest}}
           plink: ${{on.reddit.outputs.permalink}}
         run: |
-          echo title: <b><a href="https://www.reddit.com$plink">$title</a></b>
+          echo title: $plink $title
           #echo url: <a href="$url">Book Link</a>
           #echo subr: $subr
           #echo author: <a href="https://www.reddit.com/user/$author">$author</a>
