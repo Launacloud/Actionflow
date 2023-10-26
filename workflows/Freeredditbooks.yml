@@ -30,8 +30,8 @@ jobs:
       - name: Print Outputs
         env:
           title: ${{on.reddit.outputs.title}}
-          sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
-          url: ${{on.reddit.outputs.url_overridden_by_dest }}
+          subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
+          url: ${{on.reddit.outputs.url_overridden_by_dest}}
           plink: ${{on.reddit.outputs.permalink}}
           author: ${{on.reddit.outputs.author }}
         run: |
