@@ -21,7 +21,7 @@
 on:
   reddit:
     url: https://www.reddit.com/r/news/
-    source: json
+    #source: json
 jobs:
   print:
     name: Print
@@ -36,10 +36,10 @@ jobs:
           author: ${{on.reddit.outputs.author }}
         run: |
           echo title: $title
-          echo sub: https://www.reddit.com/{{on.reddit.outputs.subreddit_name_prefixed }}
-          echo url: {{on.reddit.outputs.url_overridden_by_dest }}
+          echo sub: https://www.reddit.com/$Sub
+          echo url: $url
           echo plink: https://www.reddit.com/$plink
-          echo author: https://www.reddit.com${{on.reddit.outputs.author}}
+          echo author: https://www.reddit.com/user/${{on.reddit.outputs.author}}
 
         #env:
           #title: ${{on.reddit.outputs.title}}
