@@ -1,10 +1,10 @@
 on:
   reddit:
-    url: https://www.reddit.com/r/FreeEBOOKS+freebooks
+  -  url: https://www.reddit.com/r/FreeEBOOKS+freebooks
     source: json
 jobs:
   telegram:
-    name: Send a telegram message
+   - name: Send a telegram message
     runs-on: ubuntu-latest
     steps:
       - name: Send a telegram message
