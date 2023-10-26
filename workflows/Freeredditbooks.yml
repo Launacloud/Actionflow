@@ -10,9 +10,9 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          #format: HTML
+          to: ${{secrets.TELEGRAM_TO}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          format: HTML
           env:
            title: ${{on.reddit.outputs.title}}
            subr: ${{on.reddit.outputs.subreddit_name_prefixed }}
