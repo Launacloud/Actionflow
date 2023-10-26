@@ -1,0 +1,20 @@
+on:
+  reddit:
+    url: https://www.reddit.com/r/FreeEBOOKS+freebooks
+    source: json
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message:  |
+            title: ${{on.reddit.outputs.title}}
+            sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
+            url: ${{on.reddit.outputs.url_overridden_by_dest}}
+            plink: ${{on.reddit.outputs.permalink}}
+            author: ${{on.reddit.outputs.author }}
