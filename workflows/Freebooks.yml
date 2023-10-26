@@ -12,8 +12,9 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: HTML
           message:  |
-            title: ${{on.reddit.outputs.title}}
+            <b>${{on.reddit.outputs.title}}<b>
             sub: ${{on.reddit.outputs.subreddit_name_prefixed }}
             url: ${{on.reddit.outputs.url_overridden_by_dest}}
             plink: ${{on.reddit.outputs.permalink}}
