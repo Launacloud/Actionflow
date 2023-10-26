@@ -12,7 +12,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: HTML
+          #format: HTML
           message:  |
             ${{on.reddit.outputs.title}}
             https://www.reddit.com${{on.reddit.outputs.permalink}}
