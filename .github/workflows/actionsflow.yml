@@ -14,7 +14,7 @@ on:
         default: ""
       force:
         description: "--force: whether force to run workflow, true or false"
-        required: false
+        required: true
         default: "false"
       verbose:
         description: "--verbose: debug workflow, true or false"
