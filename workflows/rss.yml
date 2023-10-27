@@ -18,7 +18,7 @@
 #            ${{on.rss.outputs.contentSnippet}}
 #            Time: ${{on.rss.outputs.pubDate}}
 #            ${{on.rss.outputs.link}}
-jobs:
+ jobs:
   print:
     name: Print
     runs-on: ubuntu-latest
