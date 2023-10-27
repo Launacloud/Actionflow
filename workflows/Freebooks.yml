@@ -13,6 +13,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: HTML
+          disable_web_page_preview: false
           message:  |
             <b>${{on.reddit.outputs.title}}</a></b>
             <a href="${{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
