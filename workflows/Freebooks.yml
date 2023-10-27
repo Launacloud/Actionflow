@@ -15,6 +15,6 @@ jobs:
           format: HTML
           disable_web_page_preview: false
           message:  |
-            <b>${{on.reddit.outputs.title}}</a></b>
+            <b>${{on.reddit.outputs.title}}</b>
             <a href="${{on.reddit.outputs.url_overridden_by_dest}}">Book Link</a>
             Via <a href="https://reddit.com/${{on.reddit.outputs.permalink}}">${{on.reddit.outputs.subreddit_name_prefixed }}</a> By ${{on.reddit.outputs.author }}
