@@ -4,7 +4,7 @@ runs:
   main: 'index.js'
   post: 'cleanup.js'
   on:
-  reddit:
+    reddit:
     url: https://www.reddit.com/r/FreeEBOOKS+freebooks
     source: json
     schedule:
