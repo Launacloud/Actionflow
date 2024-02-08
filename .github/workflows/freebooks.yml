@@ -1,4 +1,9 @@
-on:
+runs:
+  using: 'node20'
+  pre: 'setup.js'
+  main: 'index.js'
+  post: 'cleanup.js'
+  on:
   reddit:
     url: https://www.reddit.com/r/FreeEBOOKS+freebooks
     source: json
