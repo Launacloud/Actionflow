@@ -1,7 +1,7 @@
+name: teste
 runs:
   using: node20
   main: main.js
-name: Your Workflow Name
 'on':
   rss:
     url: 'https://www.heidoc.net/amazon/rss.php?guid=653b03f2ee7b2'
