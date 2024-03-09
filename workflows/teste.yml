@@ -2,9 +2,9 @@ name: teste
 runs:
   using: node20
   main: main.js
-'on':
+on:
   rss:
-    url: 'https://www.heidoc.net/amazon/rss.php?guid=653b03f2ee7b2'
+    url: https://hnrss.org/newest?points=300
 jobs:
   print:
     name: Print
@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Print Outputs
         env:
-          title: '${{on.rss.outputs.title}}'
-          contentSnippet: '${{on.rss.outputs.contentSnippet}}'
-          link: '${{on.rss.outputs.link}}'
+          title: ${{on.rss.outputs.title}}
+          contentSnippet: ${{on.rss.outputs.contentSnippet}}
+          link: ${{on.rss.outputs.link}}
         run: |
           echo title: $title
           echo contentSnippet: $contentSnippet
           echo link: $link
+#url: 'https://www.heidoc.net/amazon/rss.php?guid=653b03f2ee7b2'
