@@ -1,7 +1,7 @@
 name: teste
-runs:
-  using: node20
-  main: main.js
+#runs:
+  #using: node20
+  #main: main.js
 on:
 rss:
     url: https://hnrss.org/newest?points=300
