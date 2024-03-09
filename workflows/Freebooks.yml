@@ -1,3 +1,6 @@
+runs:
+  using: 'node20'
+  main: 'main.js'
 on:
   reddit:
     url: https://www.reddit.com/r/FreeEBOOKS+freebooks
