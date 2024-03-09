@@ -1,9 +1,11 @@
 runs:
   using: 'node20'
   main: 'main.js'
+
 on:
   rss:
     url: https://www.heidoc.net/amazon/rss.php?guid=653b03f2ee7b2
+
 jobs:
   print:
     name: Print
