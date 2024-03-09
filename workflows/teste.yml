@@ -3,7 +3,7 @@ runs:
   using: node20
   main: main.js
 on:
-  rss:
+rss:
     url: https://hnrss.org/newest?points=300
 jobs:
   print:
